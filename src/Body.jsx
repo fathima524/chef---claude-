@@ -81,7 +81,7 @@ function Body() {
     setShowRetryButton(false);
     
     try {
-      const response = await fetch('http://localhost:5000/api/get-recipe', {
+      const response = await fetch('https://chef-claude-backend-nfx7.onrender.com/api/get-recipe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ingredients, timeLimit }),
@@ -127,7 +127,7 @@ function Body() {
     setLoadingDetails(prev => ({ ...prev, [title]: true }));
     
     try {
-      const response = await fetch('http://localhost:5000/api/get-full-recipe', {
+      const response = await fetch('https://chef-claude-backend-nfx7.onrender.com/api/get-full-recipe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, ingredients, timeLimit }),
